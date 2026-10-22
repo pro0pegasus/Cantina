@@ -2,7 +2,7 @@
   "name": "my-tailwind-project",
   "version": "1.0.0",
   "scripts": {
-    "build": "@tailwindcss/cli -i ./src/input.css -o ./src/output.css"
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.3.3",
