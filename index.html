@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./output.css">
+        <link rel="stylesheet" href="styles.css">
         <title>YouCode Cantina</title>
         <script src="https://kit.fontawesome.com/e91b5e6bd8.js" crossorigin="anonymous"></script>
     </head>
@@ -29,7 +30,7 @@
             </nav>
         </header>
 
-        <main>
+        <main id="main" class="relative">
 
             <section class="flex justify-between items-center p-6 gap-x-4">
 
@@ -55,14 +56,14 @@
                 
             </section>
             
-            <section class="grid grid-cols-7 gap-3 min-h-screen mb-6 rounded-lg border border-gray-300 shadow-sm mx-7">
+            <section id="meals-container" class="grid grid-cols-7 gap-3 min-h-screen mb-6 rounded-lg border border-gray-300 shadow-sm mx-7">
 
-                <div class="flex col-span-2 bg-emerald-500 rounded-lg border border-gray-300 bg-white shadow-sm">
+                <div id="gam-container" class="flex col-span-2 bg-emerald-500 rounded-lg border border-gray-300 bg-white shadow-sm">
                     <div class="w-full px-4">
                         <h1 class="text-center py-4">Garde-manger</h1>
                         <div class="flex justify-between items-center pb-4"> 
                             <p class="text-gray-500 text-sm font-medium">Reserve de recette disponibles</p>
-                            <button class="border rounded-lg bg-sky-600 hover:bg-sky-700 text-white py-2 px-4 cursor-pointer">+ Nouveau</button>  
+                            <button id="btn-add-meals" class="border rounded-lg bg-sky-600 hover:bg-sky-700 text-white py-2 px-4 cursor-pointer">+ Nouveau</button>  
                         </div>
                         
                         <div class="flex flex-col pb-4">
@@ -75,17 +76,17 @@
                             </div>
                         </div>
 
-                        <div class="flex flex-col gap-6">
-
-                           <div class="border rounded-lg border-gray-300 shadow-sm p-2">
-                            <div class="flex gap-2">
-                                <span class="rounded-lg bg-sky-300 text-sky-600 font-normal py-1 px-3">Entree</span>
-                                <span class="rounded-lg bg-green-100 text-green-800 font-normal py-1 px-3">Bio</span>
-                                <div class="flex flex-row items-center gap-2 w-full">
-                                    <button class="cursor-pointer"><i class="fa-regular fa-trash-can"></i></button>
-                                    <button class="cursor-pointer"><i class="fa-regular fa-pen-to-square"></i></button>
+                        <div id="meals" class="flex flex-col gap-6">
+                            <!-- card 1 -->
+                           <div id="meal" class="border rounded-lg border-gray-300 shadow-sm p-2">
+                                <div class="flex gap-2">
+                                    <span class="rounded-lg bg-sky-300 text-sky-600 font-normal py-1 px-3">Entree</span>
+                                    <span class="rounded-lg bg-green-100 text-green-800 font-normal py-1 px-3">Bio</span>
+                                    <div class="flex flex-row items-center gap-2 w-full">
+                                        <button class="cursor-pointer"><i class="fa-regular fa-trash-can"></i></button>
+                                        <button class="cursor-pointer"><i class="fa-regular fa-pen-to-square"></i></button>
+                                    </div>
                                 </div>
-                            </div>
 
                                 <h2 class="py-2">Veloute de portion</h2>
                                 <div class="flex flex-row justify-between">
@@ -93,6 +94,7 @@
                                     <span class="text-gray-500">En reserve</span>
                                 </div>
                             </div>
+                            <!-- card 2 -->
                             <div class="border rounded-lg border-gray-300 shadow-sm p-2">
                                 <span class="rounded-lg bg-amber-200 text-amber-600 font-normal py-1 px-3">Plat principal</span>
                                 <span class="rounded-lg bg-gray-300 text-gray-600 font-normal py-1 px-3">Classic</span>

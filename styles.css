@@ -1,0 +1,27 @@
+.form-div {
+    display: flex;
+    justify-items: center;
+    position: absolute;
+    z-index: 1; /* Lower number = sits behind */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: '0px 2px 5px #E2E8F0';
+    background-color: #E2E8F0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
