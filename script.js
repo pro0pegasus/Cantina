@@ -10,25 +10,29 @@ const mealsArray = [
     // {id:1 , nom:"", type:"", menu:"", price:0, }
 ];
 
-let id = 0;
+let idG = 0;
 
-// document.body.addEventListener("click", e =>{
-//     if(e.target.matches("#gam-container #btn-add-meals")){
-//         console.log('hello');
-
+// document.body.addEventListener("input", e =>{
+//     if(e.target.matches(".form-div button")){
+//         // const obj = {
+//         //     id = idG,
+//         //     nom =
+//         // }
+//         console.log(e.target.value);
 //     }
 // })
 
 btnAddMeals.addEventListener('click', ()=>{
-    popupContainer()
-})
+        popupContainer();
+});
+
 
 function popupContainer(){
     const div = document.createElement("div");
     div.className = 'form-div';
     div.innerHTML = `
         <div class="flex w-full border border-gray-300 rounded-lg bg-white p-2">
-            <form class="flex flex-col justify-evenly w-full border border-gray-300 rounded-lg bg-white p-2">
+            <form id="popupForm" class="flex flex-col justify-evenly w-full border border-gray-300 rounded-lg bg-white p-2">
                 <div class="flex justify-between items-end">
                     <div>
                         <label for="menu">Menu:</label>
@@ -62,4 +66,58 @@ function popupContainer(){
         </div>
     `
     mainEl.append(div);
+
+    const form = div.querySelector("#popupForm");
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        // bring values from the form
+        const formData = new FormData(form);
+        // console.log(formData.get("menu"))
+        const meal = {
+            id: ++idG,
+            menu: formData.get("menu").trim(),
+            categorie: formData.get("categorie").trim(),
+            plat: formData.get("plat").trim(),
+            prix: Number(formData.get("prix"))
+        };
+
+        mealsArray.push(meal);
+
+        console.log("New meal:", meal);
+        console.log("All meals:", mealsArray);
+
+        afficherGarde(mealsArray);
+
+        div.remove();
+    });
+}
+
+function afficherGarde(mealsArr){
+    
+    mealsEl.innerHTML = "";
+
+    for(const meal of mealsArr){
+        const card = document.createElement("div");
+        card.innerHTML = `
+            <div id="meal" class="border rounded-lg border-gray-300 shadow-sm p-2">
+                <div class="flex gap-2">
+                    <span class="rounded-lg bg-sky-300 text-sky-600 font-normal py-1 px-3">${meal.menu}</span>
+                    <span class="rounded-lg bg-green-100 text-green-800 font-normal py-1 px-3">${meal.categorie}</span>
+                    <div class="flex flex-row items-center gap-2 w-full">
+                        <button class="cursor-pointer"><i class="fa-regular fa-trash-can"></i></button>
+                        <button class="cursor-pointer"><i class="fa-regular fa-pen-to-square"></i></button>
+                    </div>
+                </div>
+
+                <h2 class="py-2">${meal.plat}</h2>
+                <div class="flex flex-row justify-between">
+                    <p class="text-sky-600">${meal.prix}DH</p>
+                    <span class="text-gray-500">En reserve</span>
+                </div>
+            </div>
+        `
+        mealsEl.append(card);
+    }
 }
