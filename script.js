@@ -2,9 +2,11 @@ const mealsEl = document.getElementById("meals");
 const mealEl = document.getElementById("meal");
 const gamContainer = document.getElementById("gam-container");
 const btnAddMeals = document.getElementById("btn-add-meals");
-const mainEl = document.getElementById('main')
+const mainEl = document.getElementById('main');
 
-console.log(mealsEl, mealEl, btnAddMeals)
+const mealBtnEl = document.getElementById('meal-btn')
+
+// console.log(mealsEl, mealEl, btnAddMeals)
 
 const mealsArray = [
     // {id:1 , nom:"", type:"", menu:"", price:0, }
@@ -12,13 +14,9 @@ const mealsArray = [
 
 let idG = 0;
 
-// document.body.addEventListener("input", e =>{
-//     if(e.target.matches(".form-div button")){
-//         // const obj = {
-//         //     id = idG,
-//         //     nom =
-//         // }
-//         console.log(e.target.value);
+// document.body.addEventListener("click", e =>{
+//     if(e.target.matches("#day button")){
+//         genererMeal(e.target.dataset.id)
 //     }
 // })
 
@@ -85,10 +83,11 @@ function popupContainer(){
 
         mealsArray.push(meal);
 
-        console.log("New meal:", meal);
-        console.log("All meals:", mealsArray);
+        // console.log("New meal:", meal);
+        // console.log("All meals:", mealsArray);
 
         afficherGarde(mealsArray);
+        afficherPlats(mealsArray);
 
         div.remove();
     });
@@ -121,3 +120,26 @@ function afficherGarde(mealsArr){
         mealsEl.append(card);
     }
 }
+
+function afficherPlats(mealsArr){
+
+    const choixEl = document.querySelectorAll(".choix")
+
+    choixEl.forEach(select =>{
+
+        select.innerHTML = `<option class="text-xs" value=""></option>`
+
+        mealsArr.forEach(meal =>{
+            if(meal.menu.toLowerCase() === select.id.toLocaleLowerCase()){
+                const option = document.createElement("option");
+
+                option.value = meal.id;
+                option.textContent = meal.plat;
+
+                select.append(option);
+            }
+        });
+
+    });  
+}
+
