@@ -185,19 +185,13 @@ function updateDay(select){
     const mealCard = select.parentElement;
     const day = mealCard.parentElement;
 
-    if(!day){
-        return;
-    }
-
     const mealId = Number(select.value);
     const meal = mealsArray.find(meal => meal.id === mealId);
 
-    // const priceEL = day.querySelector(`#prix-${select.id}`);
     const priceEL = mealCard.querySelector(".meal-price");
 
-
     if(priceEL){
-        priceEL.textContent = meal ? `${meal.prix} DH` : "0 DH"
+        priceEL.textContent = meal ? `${meal.prix} DH` : "0 DH";
     }
 
     const total = calculateDay(day);
@@ -205,7 +199,7 @@ function updateDay(select){
     const totalEl = day.querySelector(".total-prix");
 
     if(totalEl){
-        total.textContent = `${total} Dh / 50DH`;
+        totalEl.textContent = `${total} DH / 50 DH`;
     }
 }
 
