@@ -120,7 +120,7 @@
                 </div>
 
 
-                <div id="day" class="flex flex-col gap-2 px-2 rounded-lg border border-gray-300 bg-white shadow-sm">
+                <div id="day" class="day flex flex-col gap-2 px-2 rounded-lg border border-gray-300 bg-white shadow-sm">
 
                     <div class="flex justify-between items-center pt-4 pb-8">
                         <h1 class="">Lundi</h1>
@@ -135,10 +135,10 @@
                             <button class="cursor-pointer text-gray-400 hover:text-black">x</button>
                         </div>
                         <select id="entree" class="choix w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-100">
-                            <option>Votre choix</option>
+                            <option value="">Votre choix</option>
                         </select>
                         <div class="flex justify-between items-center">
-                            <p id="prix-entree" class="text-sky-600"></p>
+                            <p id="prix-entree" class="meal-price text-sky-600">0 DH</p>
                             <button class="cursor-pointer bg-sky-200 px-2 rounded-lg border border-sky-500 text-black-400 hover:bg-sky-500 hover:text-black-500">✓</button>
                         </div>
                         
@@ -151,10 +151,10 @@
                             <h2 class="text-amber-600 font-normal">Plat principal</h2>
                         </div>
                         <select id="principal" class="choix w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-amber-500 focus:ring-2 focus:ring-amber-100">
-                            <option>Votre choix</option>
+                            <option value="">Votre choix</option>
                         </select>
                         <div class="flex justify-between items-center">
-                            <p id="prix-principal" class="text-amber-600 font-normal"></p>
+                            <p id="prix-principal" class="meal-price text-amber-600">0 DH</p>
                             <button class="cursor-pointer bg-amber-200 px-2 rounded-lg border border-amber-500 text-black-400 hover:bg-amber-500 hover:text-black-500">✓</button>
                         </div>
                     </div>
@@ -166,10 +166,10 @@
                             <h2 class="text-green-800 font-normal">Dessert</h2>
                         </div>
                         <select id="dessert" class="choix w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-green-500 focus:ring-2 focus:ring-green-100">
-                            <option>Votre choix</option>
+                            <option value="">Votre choix</option>
                         </select>
                          <div class="flex justify-between items-center">
-                            <p id="prix-dessert" class="text-green-800 font-normal"></p>
+                            <p id="prix-dessert" class="meal-price text-green-600">0 DH</p>
                             <button class="cursor-pointer bg-green-200 px-2 rounded-lg border border-emerald-500 text-black-400 hover:bg-emerald-700 hover:text-black-500">✓</button>
                         </div>
                         
@@ -178,7 +178,7 @@
                     <div class="flex flex-col mt-auto justify-evenly border-t h-1/7 p-2 border-gray-300">
                         <div class="flex justify-between items-center">
                             <h2 class="text-gray-600">Total</h2>
-                            <p class="text-gray-600">43<span> DH</span><span class="text-xs text-gray-600"> / 50dh</span></p>
+                            <p id="prix-total" class="total-prix text-gray-600">0 DH / 50 DH</p>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                             <div class="bg-green-600 h-2.5 rounded-full" style="width: 85%"></div>
@@ -187,7 +187,7 @@
 
                 </div>
 
-                <div class="flex flex-col gap-2 px-2 rounded-lg border border-gray-300 bg-white shadow-sm">
+                <div class="day flex flex-col gap-2 px-2 rounded-lg border border-gray-300 bg-white shadow-sm">
                     <div class="flex justify-between items-center pt-4 pb-8">
                         <h1 class="">Mardi</h1>
                         <span class="h-3 w-3 rounded-full bg-amber-500"></span>
@@ -200,10 +200,10 @@
                             <h2 class="text-sky-600">Entree</h2>
                         </div>
                         <select id="entree" class="choix w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-100">
-                            <option>Votre choix</option>
+                            <option value="">Votre choix</option>
                         </select>
                         <div class="flex justify-between items-center">
-                            <p id="prix-entree" class="text-sky-600"></p>
+                            <p id="prix-entree" class="meal-price text-sky-600">0 DH</p>
                             <button class="cursor-pointer bg-sky-200 px-2 rounded-lg border border-sky-500 text-black-400 hover:bg-sky-500 hover:text-black-500">✓</button>
                         </div>
                         
@@ -216,10 +216,10 @@
                             <h2 class="text-amber-600 font-normal">Plat principal</h2>
                         </div>
                         <select id="principal" class="choix w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-amber-500 focus:ring-2 focus:ring-amber-100">
-                            <option>Votre choix</option>
+                            <option value="">Votre choix</option>
                         </select>
                         <div class="flex justify-between items-center">
-                            <p class="text-amber-600 font-normal">25<span> DH</span></p>
+                            <p id="prix-principal" class="meal-price text-amber-600">0 DH</p>
                             <button class="cursor-pointer bg-amber-200 px-2 rounded-lg border border-amber-500 text-black-400 hover:bg-amber-500 hover:text-black-500">✓</button>
                         </div>
                     </div>
@@ -231,12 +231,10 @@
                             <h2 class="text-green-800 font-normal">Dessert</h2>
                         </div>
                         <select id="dessert" class="choix w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-green-500 focus:ring-2 focus:ring-green-100">
-                            <option>Votre choix</option>
-                            <option class="text-xs" value="veloute">Millefeuilles</option>
-                            <option class="text-xs" value="Zaalouk">Flan</option>
+                            <option value="">Votre choix</option>
                         </select>
                          <div class="flex justify-between items-center">
-                            <p class="text-green-800 font-normal">10<span> DH</span></p>
+                            <p id="prix-dessert" class="meal-price text-green-600">0 DH</p>
                             <button class="cursor-pointer bg-emerald-200 px-2 rounded-lg border border-emerald-500 text-black-400 hover:bg-emerald-700 hover:text-black-500">✓</button>
                         </div>
                         
@@ -245,7 +243,7 @@
                     <div class="flex flex-col mt-auto justify-evenly border-t h-1/7 p-2 border-gray-300">
                         <div class="flex justify-between items-center">
                             <h2 class="text-gray-600">Total</h2>
-                            <p class="text-gray-600">43<span> DH</span><span class="text-xs text-gray-600"> / 50dh</span></p>
+                            <p id="prix-total" class="total-prix text-gray-600">0 DH / 50 DH</p>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                             <div class="bg-green-600 h-2.5 rounded-full" style="width: 85%"></div>
@@ -253,7 +251,8 @@
                     </div>
 
                 </div>
-                <div class="flex flex-col gap-2 px-2 rounded-lg border border-gray-300 bg-white shadow-sm">
+
+                <div class="day flex flex-col gap-2 px-2 rounded-lg border border-gray-300 bg-white shadow-sm">
                     <div class="flex justify-between items-center pt-4 pb-8">
                         <h1 class="">Mercredi</h1>
                         <span class="h-3 w-3 rounded-full bg-amber-500"></span>
@@ -266,10 +265,10 @@
                             <h2 class="text-sky-600">Entree</h2>
                         </div>
                         <select id="entree" class="choix w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-100">
-                            <option>Votre choix</option>
+                            <option value="">Votre choix</option>
                         </select>
                         <div class="flex justify-between items-center">
-                            <p id="prix-entree" class="text-sky-600">7<span> DH</span></p>
+                            <p id="prix-entree" class="meal-price text-sky-600">0 DH</p>
                             <button class="cursor-pointer bg-sky-200 px-2 rounded-lg border border-sky-500 text-black-400 hover:bg-sky-500 hover:text-black-500">✓</button>
                         </div>
                         
@@ -282,10 +281,10 @@
                             <h2 class="text-amber-600 font-normal">Plat principal</h2>
                         </div>
                         <select id="principal" class="choix w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-amber-500 focus:ring-2 focus:ring-amber-100">
-                            <option>Votre choix</option>
+                            <option value="">Votre choix</option>
                         </select>
                         <div class="flex justify-between items-center">
-                            <p class="text-amber-600 font-normal">25<span> DH</span></p>
+                            <p id="prix-principal" class="meal-price text-amber-600">0 DH</p>
                             <button class="cursor-pointer bg-amber-200 px-2 rounded-lg border border-amber-500 text-black-400 hover:bg-amber-500 hover:text-black-500">✓</button>
                         </div>
                     </div>
@@ -297,17 +296,18 @@
                             <h2 class="text-green-800 font-normal">Dessert</h2>
                         </div>
                         <select id="dessert" class="choix w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-green-500 focus:ring-2 focus:ring-green-100">
-                            <option>Votre choix</option>
-                            <option class="text-xs" value="veloute">Millefeuilles</option>
-                            <option class="text-xs" value="Zaalouk">Flan</option>
+                            <option value="">Votre choix</option>
                         </select>
-                        <p class="text-green-800 font-normal">10<span> DH</span></p>
+                        <div class="flex justify-between items-center">
+                            <p id="prix-dessert" class="meal-price text-green-600">0 DH</p>
+                            <button class="cursor-pointer bg-emerald-200 px-2 rounded-lg border border-emerald-500 text-black-400 hover:bg-emerald-700 hover:text-black-500">✓</button>
+                        </div>
                     </div>
 
                     <div class="flex flex-col mt-auto justify-evenly border-t h-1/7 p-2 border-gray-300">
                         <div class="flex justify-between items-center">
                             <h2 class="text-gray-600">Total</h2>
-                            <p class="text-gray-600">43<span> DH</span><span class="text-xs text-gray-600"> / 50dh</span></p>
+                            <p id="prix-total" class="total-prix text-gray-600">0 DH / 50 DH</p>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                             <div class="bg-green-600 h-2.5 rounded-full" style="width: 85%"></div>
@@ -315,7 +315,8 @@
                     </div>
 
                 </div>
-                <div class="flex flex-col gap-2 px-2 rounded-lg border border-gray-300 bg-white shadow-sm">
+
+                <div class="day flex flex-col gap-2 px-2 rounded-lg border border-gray-300 bg-white shadow-sm">
                     <div class="flex justify-between items-center pt-4 pb-8">
                         <h1 class="">Jeudi</h1>
                         <span class="h-3 w-3 rounded-full bg-amber-500"></span>
@@ -328,10 +329,10 @@
                             <h2 class="text-sky-600">Entree</h2>
                         </div>
                         <select id="entree" class="choix w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-100">
-                            <option>Votre choix</option>
+                            <option value="">Votre choix</option>
                         </select>
                         <div class="flex justify-between items-center">
-                            <p id="prix-entree" class="text-sky-600">7<span> DH</span></p>
+                            <p id="prix-entree" class="meal-price text-sky-600">0 DH</p>
                             <button class="cursor-pointer bg-sky-200 px-2 rounded-lg border border-sky-500 text-black-400 hover:bg-sky-500 hover:text-black-500">✓</button>
                         </div>
                         
@@ -344,10 +345,10 @@
                             <h2 class="text-amber-600 font-normal">Plat principal</h2>
                         </div>
                         <select id="principal" class="choix w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-amber-500 focus:ring-2 focus:ring-amber-100">
-                            <option>Votre choix</option>
+                            <option value="">Votre choix</option>
                         </select>
                         <div class="flex justify-between items-center">
-                            <p class="text-amber-600 font-normal">25<span> DH</span></p>
+                            <p id="prix-principal" class="meal-price text-amber-600">0 DH</p>
                             <button class="cursor-pointer bg-amber-200 px-2 rounded-lg border border-amber-500 text-black-400 hover:bg-amber-500 hover:text-black-500">✓</button>
                         </div>
                     </div>
@@ -359,17 +360,18 @@
                             <h2 class="text-green-800 font-normal">Dessert</h2>
                         </div>
                         <select id="dessert" class="choix w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-green-500 focus:ring-2 focus:ring-green-100">
-                            <option>Votre choix</option>
-                            <option class="text-xs" value="veloute">Millefeuilles</option>
-                            <option class="text-xs" value="Zaalouk">Flan</option>
+                            <option value="">Votre choix</option>
                         </select>
-                        <p class="text-green-800 font-normal">10<span> DH</span></p>
+                        <div class="flex justify-between items-center">
+                            <p id="prix-dessert" class="meal-price text-green-600">0 DH</p>
+                            <button class="cursor-pointer bg-emerald-200 px-2 rounded-lg border border-emerald-500 text-black-400 hover:bg-emerald-700 hover:text-black-500">✓</button>
+                        </div>
                     </div>
                     
                     <div class="flex flex-col mt-auto justify-evenly border-t h-1/7 p-2 border-gray-300">
                         <div class="flex justify-between items-center">
                             <h2 class="text-gray-600">Total</h2>
-                            <p class="text-gray-600">43<span> DH</span><span class="text-xs text-gray-600"> / 50dh</span></p>
+                            <p id="prix-total" class="total-prix text-gray-600">0 DH / 50 DH</p>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                             <div class="bg-green-600 h-2.5 rounded-full" style="width: 85%"></div>
@@ -377,7 +379,8 @@
                     </div>
 
                 </div>
-                <div class="flex flex-col gap-2 px-2 rounded-lg border border-gray-300 bg-white shadow-sm">
+
+                <div class="day flex flex-col gap-2 px-2 rounded-lg border border-gray-300 bg-white shadow-sm">
                     <div class="flex justify-between items-center pt-4 pb-8">
                         <h1 class="">Vendredi</h1>
                         <span class="h-3 w-3 rounded-full bg-amber-500"></span>
@@ -390,10 +393,10 @@
                             <h2 class="text-sky-600">Entree</h2>
                         </div>
                         <select id="entree" class="choix w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-100">
-                            <option>Votre choix</option>
+                            <option value="">Votre choix</option>
                         </select>
                         <div class="flex justify-between items-center">
-                            <p id="prix-entree" class="text-sky-600">7<span> DH</span></p>
+                            <p id="prix-entree" class="meal-price text-sky-600">0 DH</p>
                             <button class="cursor-pointer bg-sky-200 px-2 rounded-lg border border-sky-500 text-black-400 hover:bg-sky-500 hover:text-black-500">✓</button>
                         </div>
                         
@@ -406,32 +409,32 @@
                             <h2 class="text-amber-600 font-normal">Plat principal</h2>
                         </div>
                         <select id="principal" class="choix w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-amber-500 focus:ring-2 focus:ring-amber-100">
-                            <option>Votre choix</option>
+                            <option value="">Votre choix</option>
                         </select>
                         <div class="flex justify-between items-center">
-                            <p class="text-amber-600 font-normal">25<span> DH</span></p>
+                            <p id="prix-principal" class="meal-price text-amber-600">0 DH</p>
                             <button class="cursor-pointer bg-amber-200 px-2 rounded-lg border border-amber-500 text-black-400 hover:bg-amber-500 hover:text-black-500">✓</button>
                         </div>
                     </div>
 
                     <!-- card dessert -->
-                    <div class="border rounded-lg h-1/6 p-2 bg-green-100 border-green-300 shadow-sm">
-                       
+                    <div class="border rounded-lg h-1/6 p-2 bg-green-100 border-green-300 shadow-sm">                       
                         <div class="flex justify-between items-center">
                             <h2 class="text-green-800 font-normal">Dessert</h2>
                         </div>
                         <select id="dessert" class="choix w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-green-500 focus:ring-2 focus:ring-green-100">
-                            <option>Votre choix</option>
-                            <option class="text-xs" value="veloute">Millefeuilles</option>
-                            <option class="text-xs" value="Zaalouk">Flan</option>
+                            <option value="">Votre choix</option>
                         </select>
-                        <p class="text-green-800 font-normal">10<span> DH</span></p>
+                        <div class="flex justify-between items-center">
+                            <p id="prix-dessert" class="meal-price text-green-600">0 DH</p>
+                            <button class="cursor-pointer bg-emerald-200 px-2 rounded-lg border border-emerald-500 text-black-400 hover:bg-emerald-700 hover:text-black-500">✓</button>
+                        </div>
                     </div>
 
                     <div class="flex flex-col mt-auto justify-evenly border-t h-1/7 p-2 border-gray-300">
                         <div class="flex justify-between items-center">
                             <h2 class="text-gray-600">Total</h2>
-                            <p class="text-gray-600">43<span> DH</span><span class="text-xs text-gray-600"> / 50dh</span></p>
+                            <p id="prix-total" class="total-prix text-gray-600">0 DH / 50 DH</p>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                             <div class="bg-green-600 h-2.5 rounded-full" style="width: 85%"></div>

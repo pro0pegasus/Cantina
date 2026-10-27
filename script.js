@@ -1,10 +1,7 @@
 const mealsEl = document.getElementById("meals");
-const mealEl = document.getElementById("meal");
-const gamContainer = document.getElementById("gam-container");
 const btnAddMeals = document.getElementById("btn-add-meals");
 const mainEl = document.getElementById('main');
 
-const mealBtnEl = document.getElementById('meal-btn')
 
 // console.log(mealsEl, mealEl, btnAddMeals)
 
@@ -72,6 +69,16 @@ function popupContainer(){
         // bring values from the form
         const formData = new FormData(form);
         // console.log(formData.get("menu"))
+
+        const prix = Number(formData.get("prix"));
+
+        if(formData.get("menu") === "" || formData.get("menu").trim() === "" ||
+            formData.get("categorie").trim() === "" || formData.get("plat").trim()=== "" ||
+            formData.get("prix") === "" || !Number.isFinite(prix) || prix < 0){
+                alert("Veuillez remplir correctement tous les champs");
+                return;
+            }
+
         const meal = {
             id: ++idG,
             menu: formData.get("menu").trim(),
@@ -99,7 +106,7 @@ function afficherGarde(mealsArr){
     for(const meal of mealsArr){
         const card = document.createElement("div");
         card.innerHTML = `
-            <div id="meal" class="border rounded-lg border-gray-300 shadow-sm p-2">
+            <div class="border rounded-lg border-gray-300 shadow-sm p-2">
                 <div class="flex gap-2">
                     <span class="rounded-lg bg-sky-300 text-sky-600 font-normal py-1 px-3">${meal.menu}</span>
                     <span class="rounded-lg bg-green-100 text-green-800 font-normal py-1 px-3">${meal.categorie}</span>
@@ -122,11 +129,13 @@ function afficherGarde(mealsArr){
 
 function afficherPlatsOptions(mealsArr){
 
-    const choixEl = document.querySelectorAll(".choix")
+    const choixEl = document.querySelectorAll("select.choix")
 
     choixEl.forEach(select =>{
 
-        select.innerHTML = `<option class="text-xs" value=""></option>`
+        const selectedValue = select.value
+
+        select.innerHTML = `<option class="text-xs" value="">Votre choix</option>`
 
         mealsArr.forEach(meal =>{
             if(meal.menu.toLowerCase() === select.id.toLowerCase()){
@@ -139,23 +148,85 @@ function afficherPlatsOptions(mealsArr){
             }
         });
 
-        select.addEventListener('change', ()=>{
-            // get meal id from select value
-            const mealId = Number(select.value);
-            console.log(mealId)
-            const meal = mealsArr.find(meal =>meal.id === mealId)
-            console.log(meal)
+        select.value = selectedValue;
 
-            const prixEl = document.getElementById(`prix-${select.id}`);
-            console.log(prixEl)
-            if(meal){
-                prixEl.textContent = `${meal.prix} DH`;
-            } else{
-                prixEl.textContent = 0;
-            }
-        })
+        updateDay(select);
+
+        // select.addEventListener('change', ()=>{
+        //     // get meal id from select value
+        //     const mealId = Number(select.value);
+        //     console.log(mealId)
+        //     const meal = mealsArr.find(meal =>meal.id === mealId)
+        //     console.log(meal)
+
+        //     const prixEl = document.getElementById(`prix-${select.id}`);
+        //     console.log(prixEl)
+        //     if(meal){
+        //         prixEl.textContent = `${meal.prix} DH`;
+        //         price.push(meal.prix);
+        //     } else{
+        //         prixEl.textContent = 0;
+        //     }
+
+        //     const total = calculateDay(price);
+        //     const priceCase = document.getElementById('total-prix')
+        //     priceCase.textContent = total
+
+        // })
 
     });  
 
+    // const total = calculateDay(price);
+    // document.getElementById('total-prix').append(total);
 }
 
+function updateDay(select){
+
+    const mealCard = select.parentElement;
+    const day = mealCard.parentElement;
+
+    if(!day){
+        return;
+    }
+
+    const mealId = Number(select.value);
+    const meal = mealsArray.find(meal => meal.id === mealId);
+
+    // const priceEL = day.querySelector(`#prix-${select.id}`);
+    const priceEL = mealCard.querySelector(".meal-price");
+
+
+    if(priceEL){
+        priceEL.textContent = meal ? `${meal.prix} DH` : "0 DH"
+    }
+
+    const total = calculateDay(day);
+
+    const totalEl = day.querySelector(".total-prix");
+
+    if(totalEl){
+        total.textContent = `${total} Dh / 50DH`;
+    }
+}
+
+function calculateDay(day){
+    let total = 0;
+
+    const selects = day.querySelectorAll("select.choix")
+
+    selects.forEach(select =>{
+        const mealId = Number(select.value);
+        const meal = mealsArray.find(meal => meal.id === mealId);
+
+        if(meal){
+            total += meal.prix;
+        }
+    });
+    return total;
+}
+
+mainEl.addEventListener("change", e =>{
+    if(e.target.matches("select.choix")){
+        updateDay(e.target)
+    }
+});
