@@ -9,16 +9,10 @@ const mealBtnEl = document.getElementById('meal-btn')
 // console.log(mealsEl, mealEl, btnAddMeals)
 
 const mealsArray = [
-    // {id:1 , nom:"", type:"", menu:"", price:0, }
+    // {id:1 , nom:"", type:"", menu:"entree", price:0, }
 ];
 
 let idG = 0;
-
-// document.body.addEventListener("click", e =>{
-//     if(e.target.matches("#day button")){
-//         genererMeal(e.target.dataset.id)
-//     }
-// })
 
 btnAddMeals.addEventListener('click', ()=>{
         popupContainer();
@@ -92,7 +86,7 @@ function popupContainer(){
         // console.log("All meals:", mealsArray);
 
         afficherGarde(mealsArray);
-        afficherPlats(mealsArray);
+        afficherPlatsOptions(mealsArray);
 
         div.remove();
     });
@@ -126,7 +120,7 @@ function afficherGarde(mealsArr){
     }
 }
 
-function afficherPlats(mealsArr){
+function afficherPlatsOptions(mealsArr){
 
     const choixEl = document.querySelectorAll(".choix")
 
@@ -145,6 +139,23 @@ function afficherPlats(mealsArr){
             }
         });
 
+        select.addEventListener('change', ()=>{
+            // get meal id from select value
+            const mealId = Number(select.value);
+            console.log(mealId)
+            const meal = mealsArr.find(meal =>meal.id === mealId)
+            console.log(meal)
+
+            const prixEl = document.getElementById(`prix-${select.id}`);
+            console.log(prixEl)
+            if(meal){
+                prixEl.textContent = `${meal.prix} DH`;
+            } else{
+                prixEl.textContent = 0;
+            }
+        })
+
     });  
+
 }
 
