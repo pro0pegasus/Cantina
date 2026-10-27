@@ -34,18 +34,23 @@ function popupContainer(){
                 <div class="flex justify-between items-end">
                     <div>
                         <label for="menu">Menu:</label>
-                        <input class="w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-100" type="text" id="menu" name="menu" placeholder="e.g., Entree" required>
+                        <select class="w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-100" id="menu" name="menu" required>
+                            <option value="">Choisir un menu</option>
+                            <option value="entree">Entrée</option>
+                            <option value="principal">Plat principal</option>
+                            <option value="dessert">Dessert</option>
+                        </select>
                     </div>
 
                     <div >
                         <label for="categorie">Categorie:</label>
-                        <input class="w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-100" type="categorie" id="categorie" name="categorie" placeholder="e.g., Bio" required>
+                        <input class="w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-100" type="text" id="categorie" name="categorie" placeholder="e.g., Bio" required>
                     </div>
                 </div>
 
                 <div class="flex flex-col">
                     <label for="plat">Plat principal:</label>
-                    <input class="w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-100" type="plat" id="plat" name="plat" placeholder="e.g., Tajine Poulet au Olives" required>
+                    <input class="w-full rounded-lg border border-gray-300 bg-white px-2 py-1 my-2 text-gray-700 text-xs shadow-sm outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-100" type="text" id="plat" name="plat" placeholder="e.g., Tajine Poulet au Olives" required>
                 </div>
 
                 <div class="flex justify-between items-end">
@@ -130,7 +135,7 @@ function afficherPlats(mealsArr){
         select.innerHTML = `<option class="text-xs" value=""></option>`
 
         mealsArr.forEach(meal =>{
-            if(meal.menu.toLowerCase() === select.id.toLocaleLowerCase()){
+            if(meal.menu.toLowerCase() === select.id.toLowerCase()){
                 const option = document.createElement("option");
 
                 option.value = meal.id;
